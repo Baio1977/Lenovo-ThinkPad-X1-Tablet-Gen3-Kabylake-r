@@ -275,8 +275,6 @@
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
-                    <key>#alc-verbs</key>
-                    <data>AQAAAA==</data>
                     <key>AAPL,slot-name</key>
                     <string>Internal</string>
                     <key>device_type</key>
@@ -1249,7 +1247,7 @@
                 <key>AudioDevice</key>
                 <string>PciRoot(0x0)/Pci(0x1F,0x3)</string>
                 <key>AudioOutMask</key>
-                <integer>2</integer>
+                <integer>-1</integer>
                 <key>AudioSupport</key>
                 <true/>
                 <key>DisconnectHda</key>
@@ -1263,9 +1261,9 @@
                 <key>PlayChime</key>
                 <string>Enabled</string>
                 <key>ResetTrafficClass</key>
-                <true/>
+                <false/>
                 <key>SetupDelay</key>
-                <integer>1</integer>
+                <integer>0</integer>
             </dict>
             <key>ConnectDrivers</key>
             <true/>
