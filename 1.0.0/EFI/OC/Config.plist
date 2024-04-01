@@ -1195,13 +1195,13 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C02930200QXKN2RCB</string>
+                <string></string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>rNv/2bv8</data>
+                <data></data>
                 <key>SpoofVendor</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
@@ -1209,9 +1209,9 @@
                 <key>SystemProductName</key>
                 <string>MacBookAir8,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02Z4MZVJK78</string>
+                <string></string>
                 <key>SystemUUID</key>
-                <string>D32B7118-9143-4918-ACF6-74D19B7DCF21</string>
+                <string></string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
