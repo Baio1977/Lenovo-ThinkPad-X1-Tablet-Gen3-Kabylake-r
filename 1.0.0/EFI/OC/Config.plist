@@ -994,7 +994,7 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C028383064NKN2R1H</string>
+                <string>C02830500QXKN2RCB</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
@@ -1008,9 +1008,9 @@
                 <key>SystemProductName</key>
                 <string>MacBookAir8,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02XF0G5JK78</string>
+                <string>C02X4NZSJK78</string>
                 <key>SystemUUID</key>
-                <string>7A7E2EB4-B39B-4719-90CF-8E0AF60A0CEA</string>
+                <string>5D7D0C1F-86B4-416F-AAC6-FE07AF4FA94B</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
