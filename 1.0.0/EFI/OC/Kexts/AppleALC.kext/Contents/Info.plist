@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>21H1015</string>
+	<string>23E224</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -29,19 +29,19 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>13F100</string>
+	<string></string>
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>12.3</string>
+	<string>14.4</string>
 	<key>DTSDKBuild</key>
-	<string>21E226</string>
+	<string>23E208</string>
 	<key>DTSDKName</key>
-	<string>macosx12.3</string>
+	<string>macosx14.4</string>
 	<key>DTXcode</key>
-	<string>1341</string>
+	<string>1530</string>
 	<key>DTXcodeBuild</key>
-	<string>13F100</string>
+	<string>15E204a</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>ALCUserClientProvider</key>
@@ -76,9 +76,9 @@
 					<integer>283902613</integer>
 					<key>ConfigData</key>
 					<data>
-					AUccEAFHHQABRx4XAUcfkAFHDAICFxwgAhcd
-					EAIXHiECFx8EAhcMAgEnHDABJx0AASceoAEn
-					H5ABlxxAAZcdEAGXHoEBlx8E
+					ASccEAEnHQABJx6gAScfkAGXHCABlx0QAZce
+					iwGXHwMBRxwwAUcdAAFHHhABRx+QAUcMAgIX
+					HEACFx0QAhceKwIXHwMCFwwC
 					</data>
 					<key>FuncGroup</key>
 					<integer>1</integer>
@@ -87,6 +87,116 @@
 					<key>WakeConfigData</key>
 					<data>
 					AUcMAgIXDAI=
+					</data>
+					<key>WakeVerbReinit</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>
+					AwAAAA==
+					</data>
+					<key>Codec</key>
+					<string>Lorys89 - Realtek ALC295/ALC3254 for Dell Latitude 7210 2-in-1</string>
+					<key>CodecID</key>
+					<integer>283902613</integer>
+					<key>ConfigData</key>
+					<data>
+					AUccEAFHHQEBRx4XAUcfkAFHDAICFxwgAhcd
+					EAIXHisCFx8DAhcMAgEnHDABJx0BAScepgEn
+					H5ABlxxAAZcdEAGXHosBlx8DAZcHJAIFAEUC
+					BFKJ
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>33</integer>
+					<key>WakeConfigData</key>
+					<data>
+					AUcMAgIXDAIBlwckAgUARQIEUok=
+					</data>
+					<key>WakeVerbReinit</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>
+					AwAAAA==
+					</data>
+					<key>Codec</key>
+					<string>Lorys89 - Realtek ALC295/ALC3254 for all laptop Dell</string>
+					<key>CodecID</key>
+					<integer>283902613</integer>
+					<key>ConfigData</key>
+					<data>
+					AUccEAFHHQEBRx4XAUcfkAFHDAICFxzwAhcd
+					EAIXHiECFx8EAhcMAgEnHDABJx0BAScepgEn
+					H5ABlxxAAZcdEAGXHoEBlx8EAgcc8AIHHQAC
+					Bx4AAgcfAAIFAEUCBFKJ
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>34</integer>
+					<key>WakeConfigData</key>
+					<data>
+					AUcMAgGXByQCFwwC
+					</data>
+					<key>WakeVerbReinit</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>
+					AwAAAA==
+					</data>
+					<key>Codec</key>
+					<string>Baio77 - Realtek ALC700</string>
+					<key>CodecID</key>
+					<integer>283903744</integer>
+					<key>ConfigData</key>
+					<data>
+					ASccEAEnHQEBJx6gAScfkAE3HCABNx0FATce
+					oAE3H5ABlxwwAZcdEAGXHosBlx8CAbccQAG3
+					HQABtx4QAbcfkAG3DAICFxxfAhcdEAIXHgsC
+					Fx8CAhcMAgHnHGAB5x0RAeceSwHnHwE=
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>22</integer>
+					<key>WakeConfigData</key>
+					<data>
+					AbcMAgIXDAI=
+					</data>
+					<key>WakeVerbReinit</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>
+					AwAAAA==
+					</data>
+					<key>CodecID</key>
+					<integer>283906592</integer>
+					<key>CodecName</key>
+					<string>MacPeet- ALC1220 for Z390 Aorus Ultra - Output SP/HP SwitchMode</string>
+					<key>ConfigData</key>
+					<data>
+					AUccEAFHHUABRx4RAUcfkAFHDAIBVxwgAVcd
+					EAFXHgEBVx8BAWccMAFnHWABZx4BAWcfAQF3
+					HPABdx0AAXceAAF3H0ABhxxAAYcdkAGHHqAB
+					hx+QAZccYAGXHZABlx6BAZcfAgGnHFABpx0w
+					AacegQGnHwEBtxxwAbcdQAG3HiEBtx8CAbcM
+					AgHnHJAB5x1hAeceSwHnHwE=
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>29</integer>
+					<key>WakeConfigData</key>
+					<data>
+					AUcMAg==
 					</data>
 					<key>WakeVerbReinit</key>
 					<true/>

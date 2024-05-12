@@ -20,8 +20,6 @@ DefinitionBlock ("", "SSDT", 2, "APPLE", "X1Tablet", 0x00000000)
     External (_SI_._SST, MethodObj)    // 1 Arguments
     External (HPTE, IntObj)
     External (LNUX, IntObj)
-    External (SDS0, IntObj)
-    External (USBH, IntObj)
     External (WNTF, IntObj)
     External (ZPRW, MethodObj)    // 2 Arguments
 
@@ -35,8 +33,6 @@ DefinitionBlock ("", "SSDT", 2, "APPLE", "X1Tablet", 0x00000000)
             \LNUX = One
             \WNTF = One
             HPTE = Zero
-            SDS0 = One
-            USBH = One
             Name (\_S3, Package (0x04)  // _S3_: S3 System State
             {
                 0x05, 
@@ -158,27 +154,6 @@ DefinitionBlock ("", "SSDT", 2, "APPLE", "X1Tablet", 0x00000000)
                                 0x012C
                             }
                         })
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (0x0F)
-                            }
-                            Else
-                            {
-                                Return (Zero)
-                            }
-                        }
-                    }
-
-                    Device (ARTC)
-                    {
-                        Name (_HID, "ACPI000E" /* Time and Alarm Device */)  // _HID: Hardware ID
-                        Method (_GCP, 0, NotSerialized)  // _GCP: Get Capabilities
-                        {
-                            Return (0x05)
-                        }
-
                         Method (_STA, 0, NotSerialized)  // _STA: Status
                         {
                             If (_OSI ("Darwin"))
