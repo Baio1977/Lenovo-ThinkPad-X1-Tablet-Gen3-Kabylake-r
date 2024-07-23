@@ -7,7 +7,7 @@ on:
   release:
     types: [published]
 
-name: Upload Release Asset
+name: Upload
 
 jobs:
   build:
