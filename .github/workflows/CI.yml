@@ -2,8 +2,10 @@ name: CI
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
 
 name: Upload Release Asset
 
