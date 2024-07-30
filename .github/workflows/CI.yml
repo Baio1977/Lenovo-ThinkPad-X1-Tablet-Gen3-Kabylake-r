@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Artifacts
-          path: https://github.com/Baio1977/Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r/tree/main.zip
+          path: https://github.com/Baio1977/Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r.zip
       - name: Upload to Release
         if: github.event_name == 'release'
         uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
