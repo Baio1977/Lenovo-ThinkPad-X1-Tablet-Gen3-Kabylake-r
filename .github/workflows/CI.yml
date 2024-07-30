@@ -1,22 +1,33 @@
-on: 
+name: CI
+
+on:
   push:
-    branches:
-      - master
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+env:
+  PROJECT_TYPE: EFI
 
 jobs:
-  release-on-push:
-    runs-on: ubuntu-latest
+  build:
+    name: Build
+    runs-on: macos-12
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      JOB_TYPE: BUILD
     steps:
-      - id: release
-        uses: rymndhng/release-on-push-action@master
+      - uses: actions/checkout@v4
+      - name: Upload to Artifacts
+        uses: actions/upload-artifact@v4
         with:
-          bump_version_scheme: minor
-          tag_prefix: v
-          
-      - name: Check Output Parameters
-        run: |
-          echo "Got tag name ${{ steps.release.outputs.tag_name }}"
-          echo "Got release version ${{ steps.release.outputs.version }}"
-          echo "Upload release artifacts to ${{ steps.release.outputs.upload_url }}"
+          name: Artifacts
+          path: https://github.com/Baio1977/Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r/tree/main.zip
+      - name: Upload to Release
+        if: github.event_name == 'release'
+        uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/*/*.zip
+          tag: ${{ github.ref }}
+          file_glob: true
