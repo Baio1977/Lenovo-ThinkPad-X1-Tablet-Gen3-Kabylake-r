@@ -2,7 +2,7 @@
 [![](https://img.shields.io/badge/EFI-Release-informational?style=flat&logo=apple&logoColor=white&color=9debeb)](https://github.com/Baio1977/EFI-Varie-Hackintosh)
 [![](https://img.shields.io/badge/Telegram-HackintoshLifeIT-informational?style=flat&logo=telegram&logoColor=white&color=5fb659)](https://t.me/HackintoshLife_it)
 
-# Lenovo ThinkPad X1 Tablet 3°Gen Type 20KK Hackintosh MacOS Sonoma\Ventura\Monterey
+# Lenovo ThinkPad X1 Tablet 3°Gen Type 20KK Hackintosh MacOS Sequoia\Sonoma\Ventura\Monterey
 
 ![Lenovo](./Screenshot/1.jpg)
 ![Lenovo](./Screenshot/2.jpg)
