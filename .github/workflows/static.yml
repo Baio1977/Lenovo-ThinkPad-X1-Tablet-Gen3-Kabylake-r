@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Upload ZIP to S3
-        uses: NotCoffee418/s3-zip-upload@v1.4
         run: |
           rm -rf <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip
           zip -r <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r> -x ".git/*" ".github/*"
