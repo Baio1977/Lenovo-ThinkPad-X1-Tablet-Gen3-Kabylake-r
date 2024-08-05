@@ -5,7 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Upload ZIP to S3
         uses: NotCoffee418/s3-zip-upload@v1.4
         run: |
