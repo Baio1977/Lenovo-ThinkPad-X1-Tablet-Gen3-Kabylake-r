@@ -1,0 +1,12 @@
+name: Zip repository and put on S3
+on: [workflow_dispatch]
+
+jobs:
+  zip-n-push:
+    name: Zip and Push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zip Folder
+        run: |
+          rm -rf <hp-DA1023nia-macOS>.zip
+          zip -r <hp-DA1023nia-macOS>.zip <hp-DA1023nia-macOS> -x ".git/*" ".github/*"
