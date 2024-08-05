@@ -1,12 +1,13 @@
-name: Zip repository and put on S3
-on: [workflow_dispatch]
-
+name: Create Archive
+on: [push]
 jobs:
-  zip-n-push:
-    name: Zip and Push
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Zip Folder
-        run: |
-          rm -rf <hp-DA1023nia-macOS>.zip
-          zip -r <hp-DA1023nia-macOS>.zip <hp-DA1023nia-macOS> -x ".git/*" ".github/*"
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: 'zip'
+        filename: 'release.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
