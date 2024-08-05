@@ -1,13 +1,12 @@
-name: Create Archive
-on: [push]
+name: Zip repository and put on S3
+on: [workflow_dispatch]
+
 jobs:
-  build:
+  zip-n-push:
+    name: Zip and Push
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Archive Release
-      uses: thedoctor0/zip-release@0.7.5
-      with:
-        type: 'zip'
-        filename: 'release.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig'
+      - name: Zip Folder
+        run: |
+          rm -rf <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip
+          zip -r <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r> -x ".git/*" ".github/*"
