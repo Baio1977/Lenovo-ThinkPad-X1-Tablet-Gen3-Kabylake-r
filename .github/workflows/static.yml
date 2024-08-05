@@ -1,12 +1,18 @@
-name: Zip repository and put on S3
-on: [workflow_dispatch]
+name: Upload to S3
+on: [push]
 
 jobs:
-  zip-n-push:
-    name: Zip and Push
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Zip Folder
-        run: |
-          rm -rf <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip
-          zip -r <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r> -x ".git/*" ".github/*"
+      - uses: actions/checkout@v2
+      - name: Upload ZIP to S3
+        uses: NotCoffee418/s3-zip-upload@v1.4
+        env:
+          AWS_SECRET_ID: ${{ secrets.AWS_SECRET_ID }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+          AWS_REGION: eu-central-1
+          SOURCE_MODE: ZIP
+          SOURCE_PATH: ./debug-override
+          DEST_FILE: debug-action.zip
