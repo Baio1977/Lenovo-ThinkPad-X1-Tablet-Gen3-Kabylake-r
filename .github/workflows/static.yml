@@ -1,0 +1,12 @@
+name: Zip repository and put on S3
+on: [workflow_dispatch]
+
+jobs:
+  zip-n-push:
+    name: Zip and Push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zip Folder
+        run: |
+          rm -rf <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip
+          zip -r <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r> -x ".git/*" ".github/*"
