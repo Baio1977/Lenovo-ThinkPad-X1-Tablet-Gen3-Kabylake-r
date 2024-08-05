@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: Zip Folder
         run: |
-          rm -rf <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-/1.0.0/EFI>.zip
-          zip -r <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-/1.0.0/EFI>.zip <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-/1.0.0/EFI> -x ".git/*" ".github/*"
+          rm -rf <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-/1.0.0/EFI/>.zip
+          zip -r <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-/1.0.0/EFI/>.zip <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-/1.0.0/EFI/> -x ".git/*" ".github/*"
