@@ -1,12 +1,23 @@
-name: Zip repository and put on S3
-on: [workflow_dispatch]
+name: Zip and Upload Artifact
+
+on: 
+  push:
+    branches:
+      - main  # You can specify the branch you want to trigger the action
 
 jobs:
-  zip-n-push:
-    name: Zip and Push
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Zip Folder
-        run: |
-          
-          zip -r <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r>.zip <Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r> -x ".git/*" ".github/*"
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Zip repository
+      run: zip -r repository.zip .
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: repository-zip
+        path: repository.zip
