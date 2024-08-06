@@ -20,6 +20,7 @@ jobs:
         rm -Rf Screenshot
         rm -Rf _config.yml
         rm -Rf "X1 Tablet 3°Gen.ioreg"
+        rm -Rf README.md
         rm -Rf opencore-2024-01-10-205829.txt
       
         zip -r repository.zip .
