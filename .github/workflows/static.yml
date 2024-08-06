@@ -15,14 +15,14 @@ jobs:
 
     - name: Zip repository
       run: |
-      rm -R TOOLS
-      rm -R Bios  V 1.49 SysReport
-      rm -R Screenshot
-      rm -R _config.yml
-      rm -R X1 Tablet 3°Gen.ioreg
-      rm -R opencore-2024-01-10-205829.txt
+        rm -Rf TOOLS
+        rm -Rf "Bios  V 1.49 SysReport"
+        rm -Rf Screenshot
+        rm -Rf _config.yml
+        rm -Rf "X1 Tablet 3°Gen.ioreg"
+        rm -Rf opencore-2024-01-10-205829.txt
       
-      zip -r repository.zip .
+        zip -r repository.zip .
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
