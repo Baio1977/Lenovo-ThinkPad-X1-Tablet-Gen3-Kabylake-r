@@ -22,11 +22,14 @@ jobs:
         rm -Rf "X1 Tablet 3°Gen.ioreg"
         rm -Rf README.md
         rm -Rf opencore-2024-01-10-205829.txt
-      
+        rm -Rf .gitignore       
+        rm -Rf ".github"
+        rm -Rf ".git"
+        
         zip -r Lenovo_ThinkPad_X1-Tablet_Gen3.zip .
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: Lenovo_ThinkPad_X1-Tablet_Gen3-zip
+        name: Lenovo_ThinkPad_X1-Tablet_Gen3
         path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
