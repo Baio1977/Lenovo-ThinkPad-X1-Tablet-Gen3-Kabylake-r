@@ -23,10 +23,10 @@ jobs:
         rm -Rf README.md
         rm -Rf opencore-2024-01-10-205829.txt
       
-        zip -r repository.zip .
+        zip -r Lenovo_ThinkPad_X1-Tablet_Gen3.zip .
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: repository-zip
-        path: repository.zip
+        name: Lenovo_ThinkPad_X1-Tablet_Gen3-zip
+        path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
