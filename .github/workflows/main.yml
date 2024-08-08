@@ -32,3 +32,8 @@ jobs:
       with:
         name: Lenovo_ThinkPad_X1-Tablet_Gen3
         path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
+        
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "release.tar.gz,foo/*.txt"
+        bodyFile: "body.md"
