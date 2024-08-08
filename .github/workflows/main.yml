@@ -32,10 +32,3 @@ jobs:
       with:
         name: Lenovo_ThinkPad_X1-Tablet_Gen3
         path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
-
-    - name: Upload to Release
-      uses: actions/upload-artifact@v4
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        name: Lenovo_ThinkPad_X1-Tablet_Gen3
-        path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
