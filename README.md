@@ -1,4 +1,4 @@
-:it:[![CI](https://github.com/Baio1977/Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r/actions/workflows/main.yml/badge.svg)](https://github.com/Baio1977/Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r/actions/workflows/main.yml)
+## Download last EFI:it:[![CI](https://github.com/Baio1977/Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r/actions/workflows/main.yml/badge.svg)](https://github.com/Baio1977/Lenovo-ThinkPad-X1-Tablet-Gen3-Kabylake-r/actions/workflows/main.yml)
 
 [![](https://img.shields.io/badge/Gitter%20Ice%20Lake-Chat-informational?style=flat&logo=gitter&logoColor=white&color=ed1965)](https://gitter.im/ICE-LAKE-HACKINTOSH-DEVELOPMENT/community)
 [![](https://img.shields.io/badge/EFI-Release-informational?style=flat&logo=apple&logoColor=white&color=9debeb)](https://github.com/Baio1977/EFI-Varie-Hackintosh)
