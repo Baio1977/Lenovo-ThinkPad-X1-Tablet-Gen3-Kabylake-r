@@ -7,6 +7,9 @@ on:
   release:
     types: [published]
 
+env:
+  PROJECT_TYPE: EFI
+
 jobs:
   build:
     name: Build
@@ -17,9 +20,9 @@ jobs:
       JOB_TYPE: BUILD
 
     steps:
-    - uses: actions/checkout@v4
-
-    - name: Zip repository
+    - uses: actions/checkout@v4.1.6
+      
+    - name: Zip EFI
       run: |
         rm -Rf TOOLS
         rm -Rf "Bios  V 1.49 SysReport"
@@ -34,7 +37,10 @@ jobs:
         zip -r Lenovo_ThinkPad_X1-Tablet_Gen3.zip .
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v4.3.6
+      with:
+        name: Lenovo_ThinkPad_X1-Tablet_Gen3
+        path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
 
     - name: Upload build
       uses: svenstaro/upload-release-action@2.9.0
