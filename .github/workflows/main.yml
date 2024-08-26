@@ -1,17 +1,23 @@
-name: Zip and Upload Artifact
+name: Builds Artifact and Release
 
-on: 
+on:
   push:
-    branches:
-      - main  # You can specify the branch you want to trigger the action
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   build:
+    name: Build
     runs-on: macos-latest
+    permissions:
+      contents: write
+    env:
+      JOB_TYPE: BUILD
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
     - name: Zip repository
       run: |
@@ -29,6 +35,15 @@ jobs:
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
+
+    - name: Upload build
+      uses: svenstaro/upload-release-action@2.9.0
+      if: github.event_name != 'pull_request'
       with:
-        name: Lenovo_ThinkPad_X1-Tablet_Gen3
-        path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
+         repo_token: ${{ secrets.GITHUB_TOKEN }}
+         file: ./*.zip
+         tag: ${{ github.ref }}
+         release_name: EFI ThinkPad X1Tablet Gen3 Hackintosh
+         body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
+         file_glob: true
+         overwrite: true
