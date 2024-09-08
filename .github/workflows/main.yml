@@ -20,7 +20,7 @@ jobs:
       JOB_TYPE: BUILD
 
     steps:
-    - uses: actions/checkout@v4.1.6
+    - uses: actions/checkout@v4.1.7
       
     - name: Zip EFI
       run: |
@@ -37,7 +37,7 @@ jobs:
         zip -r Lenovo_ThinkPad_X1-Tablet_Gen3.zip .
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4.3.6
+      uses: actions/upload-artifact@v4.4.0
       with:
         name: Lenovo_ThinkPad_X1-Tablet_Gen3
         path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
