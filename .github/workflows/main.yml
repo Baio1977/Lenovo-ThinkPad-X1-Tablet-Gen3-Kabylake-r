@@ -43,7 +43,7 @@ jobs:
         path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
 
     - name: Upload build
-      uses: softprops/action-gh-release@v2.0.8
+      uses: svenstaro/upload-release-action@2.9.0
       if: github.event_name != 'pull_request'
       with:
          repo_token: ${{ secrets.GITHUB_TOKEN }}
