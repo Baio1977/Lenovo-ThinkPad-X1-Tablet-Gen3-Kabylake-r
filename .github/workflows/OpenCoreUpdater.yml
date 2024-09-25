@@ -52,10 +52,10 @@ jobs:
         KEXT_TARGET="./EFI/OC/Kexts"
         mkdir -p "$KEXT_TARGET"
         if [ -d "$KEXT_SOURCE" ]; then
-          echo "Copying kext files from $KEXT_SOURCE to $KEXT_TARGET..."
+          echo "Copying kexts files from $KEXT_SOURCE to $KEXT_TARGET..."
           cp -R "$KEXT_SOURCE/"* "$KEXT_TARGET/"
         else
-          echo "Error: Kext folder not found."
+          echo "Error: Kexts folder not found."
           exit 1
         fi
 
