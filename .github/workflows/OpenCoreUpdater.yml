@@ -84,6 +84,11 @@ jobs:
         done
         cd -  # Return to the previous directory
 
+    - name: Remove all files in EFI/OC/Resources/Image
+      run: |
+        echo "Removing all files in EFI/OC/Resources/Image..."
+        rm -rf ./EFI/OC/Resources/Image/*
+
     - name: Copy HackintoshLife to EFI/OC/Resources/Image
       run: |
         echo "Copying HackintoshLife to EFI/OC/Resources/Image..."
