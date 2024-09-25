@@ -84,10 +84,10 @@ jobs:
         done
         cd -  # Return to the previous directory
 
-    - name: Copy HackintoshLife to EFI/OC/Drivers
+    - name: Copy HackintoshLife to EFI/OC/Resources/Image
       run: |
         echo "Copying HackintoshLife to EFI/OC/Resources/Image..."
-        cp ./HackintoshLife/ ./EFI/OC/Resources/Image/
+        cp -r ./HackintoshLife/ ./EFI/OC/Resources/Image/
         
     - name: Copy HfsPlus.efi to EFI/OC/Drivers
       run: |
