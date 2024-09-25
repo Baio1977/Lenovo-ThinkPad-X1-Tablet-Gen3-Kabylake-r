@@ -16,19 +16,18 @@ jobs:
     - name: Set up environment
       run: |
         sudo apt-get update
-        sudo apt-get install -y unzip curl zip jq
+        sudo apt-get install -y unzip curl zip
 
     - name: Fetch latest OpenCore release
       id: fetch_release
       run: |
         echo "Fetching the latest release version from GitHub..."
-        DOWNLOAD_URL=$(curl -s https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest | jq -r '.assets[] | select(.name | test("RELEASE")) | .browser_download_url')
-        echo "DOWNLOAD_URL=$DOWNLOAD_URL" >> $GITHUB_ENV
+       DOWNLOAD_URL=$(curl -s https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest | grep "browser_download_url.*zip" | grep "RELEASE" | cut -d '"' -f 4)
 
     - name: Download OpenCore
       run: |
         echo "Downloading the latest version of OpenCore from $DOWNLOAD_URL..."
-        curl -L -o "OpenCore-Release.zip" "$DOWNLOAD_URL" || { echo "Download failed"; exit 1; }
+        curl -L -o "OpenCore-Release.zip" "$DOWNLOAD_URL"
 
     - name: Unzip the downloaded file
       run: |
@@ -82,26 +81,15 @@ jobs:
     - name: Copy HfsPlus.efi to EFI/OC/Drivers
       run: |
         echo "Copying HfsPlus.efi to EFI/OC/Drivers..."
-        if [ -f "./HfsPlus.efi" ]; then
-          cp ./HfsPlus.efi ./EFI/OC/Drivers/
-        else
-          echo "HfsPlus.efi not found."
-          exit 1
-        fi
+        cp ./HfsPlus.efi ./EFI/OC/Drivers/
         
     - name: Copy ext4_x64.efi to EFI/OC/Drivers
       run: |
-        echo "Copying ext4_x64.efi to EFI/OC/Drivers..."
-        if [ -f "./Drivers/ext4_x64.efi" ]; then
-          cp ./Drivers/ext4_x64.efi ./EFI/OC/Drivers/
-        else
-          echo "ext4_x64.efi not found."
-          exit 1
-        fi
+       cp ./Drivers/ext4_x64.efi ./EFI/OC/Drivers/
 
     - name: Copy SSDT-Thinkpad_X1Tablet_3Gen.aml to EFI/OC/ACPI
       run: |
-        echo "Copying SSDT-Thinkpad_X1Tablet_3Gen.aml to EFI/OC/ACPI..."
+        echo "SSDT-Thinkpad_X1Tablet_3Gen.aml to EFI/OC/ACPI..."
         cp ./ACPI/SSDT-Thinkpad_X1Tablet_3Gen.aml ./EFI/OC/ACPI/
 
     - name: Clean up
@@ -109,9 +97,9 @@ jobs:
         echo "Cleaning up..."
         rm -rf "OpenCore-Release.zip"
         rm -rf ./X64
-        rm -rf ./Utilities  # Ensure this is correct based on your extracted content
-        rm -rf ./IA32
-        rm -rf ./Docs
+        rm -Rf Utilities
+        rm -Rf IA32
+        rm -Rf Docs
         echo "OpenCore X64 EFI folder has been successfully extracted."
 
     - name: Zip the EFI directory
@@ -123,16 +111,16 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Lenovo_ThinkPad_X1-Tablet_Gen3
-        path: EFI.zip  # Ensure this matches the zipped file name
+        path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
     
     - name: Upload build
       uses: svenstaro/upload-release-action@2.9.0
       if: github.event_name != 'pull_request'
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./EFI.zip  # Ensure this matches the zipped file name
-        tag: ${{ github.ref }}
-        release_name: Lenovo_ThinkPad_X1-Tablet_Gen3
-        body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
-        file_glob: true
-        overwrite: true
+         repo_token: ${{ secrets.GITHUB_TOKEN }}
+         file: ./*.zip
+         tag: ${{ github.ref }}
+         release_name: Lenovo_ThinkPad_X1-Tablet_Gen3
+         body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
+         file_glob: true
+         overwrite: true    
