@@ -7,10 +7,13 @@ on:
 
 jobs:
   download_opencore:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    env:
+      JOB_TYPE: BUILD
 
     steps:
-    - name: Checkout repository
     - uses: actions/checkout@v4.1.7
 
     - name: Set up environment
