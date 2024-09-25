@@ -114,5 +114,16 @@ jobs:
       with:
         name: Lenovo_ThinkPad_X1-Tablet_Gen3
         path: OpenCore-EFI.zip
-    
+        
+    - name: Upload build
+      uses: svenstaro/upload-release-action@2.9.0
+      if: github.event_name != 'pull_request'
+      with:
+         repo_token: ${{ secrets.GITHUB_TOKEN }}
+         file: ./*.zip
+         tag: ${{ github.ref }}
+         release_name: EFI
+         body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
+         file_glob: true
+         overwrite: true    
    
