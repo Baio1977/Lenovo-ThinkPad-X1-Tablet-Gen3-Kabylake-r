@@ -108,20 +108,20 @@ jobs:
         echo "Zipping the EFI directory..."
         zip -r EFI.zip EFI
 
-    - name: Upload EFI artifact
-      uses: actions/upload-artifact@v3
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4.4.0
       with:
-        name: OpenCore-EFI
-        path: EFI.zip
+        name: Lenovo_ThinkPad_X1-Tablet_Gen3
+        path: Lenovo_ThinkPad_X1-Tablet_Gen3.zip
     
-    - name: Upload build
+   - name: Upload build
       uses: svenstaro/upload-release-action@2.9.0
       if: github.event_name != 'pull_request'
       with:
          repo_token: ${{ secrets.GITHUB_TOKEN }}
-         file: OpenCore-EFI
+         file: ./*.zip
          tag: ${{ github.ref }}
-         release_name: Lenovo_ThinkPad_X1-Tablet_Gen3
+         release_name: EFI ThinkPad X1Tablet Gen3 Hackintosh
          body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
          file_glob: true
-         overwrite: true    
+         overwrite: true
