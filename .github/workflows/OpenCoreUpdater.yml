@@ -82,7 +82,7 @@ jobs:
     - name: Copy HfsPlus.efi to EFI/OC/Drivers
       run: |
         echo "Copying HfsPlus.efi to EFI/OC/Drivers..."
-        cp ./HfsPlus.efi ./EFI/OC/Drivers/
+        cp ./Drivers/HfsPlus.efi ./EFI/OC/Drivers/
         
     - name: Copy ext4_x64.efi to EFI/OC/Drivers
       run: |
