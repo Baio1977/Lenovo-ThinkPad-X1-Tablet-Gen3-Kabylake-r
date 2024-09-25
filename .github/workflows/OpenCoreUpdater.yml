@@ -7,15 +7,13 @@ on:
 
 jobs:
   download_opencore:
-    runs-on: macos-latest
-    permissions:
-      contents: write
-    env:
-      JOB_TYPE: BUILD
+    runs-on: ubuntu-latest
+
 
     steps:
-    - uses: actions/checkout@v4.1.7
-
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
     - name: Set up environment
       run: |
         sudo apt-get update
@@ -124,7 +122,7 @@ jobs:
          repo_token: ${{ secrets.GITHUB_TOKEN }}
          file: ./*.zip
          tag: ${{ github.ref }}
-         release_name: EFI ThinkPad X1Tablet Gen3 Hackintosh
+         release_name: Lenovo_ThinkPad_X1-Tablet_Gen3
          body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
          file_glob: true
-         overwrite: true
+         overwrite: true    
