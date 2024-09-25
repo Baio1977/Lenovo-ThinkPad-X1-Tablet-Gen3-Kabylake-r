@@ -5,6 +5,10 @@ on:
     branches: 
       - main  # Change this to your default branch
 
+permissions:
+  contents: write
+  actions: write
+
 jobs:
   download_opencore:
     runs-on: ubuntu-latest
