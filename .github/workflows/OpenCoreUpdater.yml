@@ -119,7 +119,7 @@ jobs:
       if: github.event_name != 'pull_request'
       with:
          repo_token: ${{ secrets.GITHUB_TOKEN }}
-         file: ./*.zip
+         file: ./EFI.zip
          tag: ${{ github.ref }}
          release_name: Lenovo_ThinkPad_X1-Tablet_Gen3
          body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
