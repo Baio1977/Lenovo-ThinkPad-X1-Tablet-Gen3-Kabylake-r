@@ -122,7 +122,7 @@ jobs:
          repo_token: ${{ secrets.GITHUB_TOKEN }}
          file: ./*.zip
          tag: ${{ github.ref }}
-         release_name: Lenovo_ThinkPad_X1-Tablet_Gen3
+         release_name: EFI Lenovo_ThinkPad_X1-Tablet_Gen3
          body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
          file_glob: true
          overwrite: true    
